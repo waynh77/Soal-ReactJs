@@ -17,7 +17,9 @@ class PelangganService {
     }
 
     updatePelanggan(Pelanggan, PelangganId){
-        return axios.put(Pelanggan_API_BASE_URL + '/' + PelangganId, Pelanggan);
+        Pelanggan.id=PelangganId;
+        return axios.put(Pelanggan_API_BASE_URL,Pelanggan);
+        //  + '/' + PelangganId, Pelanggan);
     }
 
     deletePelanggan(PelangganId){

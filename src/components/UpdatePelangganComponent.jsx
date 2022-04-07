@@ -19,7 +19,8 @@ class UpdatePelangganComponent extends Component {
     componentDidMount(){
         PelangganService.getPelangganById(this.state.id).then( (res) =>{
             let Pelanggan = res.data;
-            this.setState({nama: Pelanggan.nama,
+            this.setState({
+                nama: Pelanggan.nama,
                 alamat: Pelanggan.alamat,
                 noTelp : Pelanggan.noTelp
             });
@@ -28,7 +29,7 @@ class UpdatePelangganComponent extends Component {
 
     updatePelanggan = (e) => {
         e.preventDefault();
-        let Pelanggan = {nama: this.state.nama, alamat: this.state.alamat, noTelp: this.state.noTelp};
+        let Pelanggan = { nama: this.state.nama, alamat: this.state.alamat, noTelp: this.state.noTelp};
         console.log('Pelanggan => ' + JSON.stringify(Pelanggan));
         console.log('id => ' + JSON.stringify(this.state.id));
         PelangganService.updatePelanggan(Pelanggan, this.state.id).then( res => {

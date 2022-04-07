@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const Transaksi_API_BASE_URL = "https://localhost:7038/api/Transaksi";
+const Transaksi_API_BASE_URL = "https://localhost:44376/api/Transaksi";
 
 class TransaksiService {
 
